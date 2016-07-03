@@ -8,7 +8,7 @@ import (
 
 func ValidateEmail(email string) bool {
     loweredEmail := strings.ToLower(email)
-    pattern := "^[a-z0-9.%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+    pattern := "^[a-z0-9.%+-]+@([a-z0-9-].)+[a-z]{2,4}$"
     compiledp, _ := regexp.Compile(pattern)
     matched := compiledp.MatchString(loweredEmail)
     return matched
