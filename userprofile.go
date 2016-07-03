@@ -15,7 +15,7 @@ func ValidateEmail(email string) bool {
 }
 
 func ValidateUsername(username string) bool {
-    pattern := "^[a-zA-Z0-9.].{2,12}$"
+    pattern := "^[a-zA-Z0-9.]{2,12}$"
     compiledp, _ := regexp.Compile(pattern)
     matched := compiledp.MatchString(username)
     return matched
