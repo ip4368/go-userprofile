@@ -21,6 +21,12 @@ func ValidateUsername(username string) bool {
     return matched
 }
 
+func ValidateName(name string) bool {
+    length := len(name)
+    if length <= 2 { return false }
+    return true
+}
+
 func ProcessNewUser(username string, email string, pass string) (string, string, bool) {
     if !ValidateUsername(username) { return "", "", false }
     if !ValidateEmail(email) { return "", "", false }
